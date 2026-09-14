@@ -14,10 +14,18 @@
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/malaysia-postcodes@3.0.0/dist/malaysia-postcodes.min.js"></script>
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var route = params.get('p');
+        if (route) {
+          window.history.replaceState(null, '', '/' + route);
+        }
+      })();
+    </script>
   </head>
   <body class="h-full min-h-full m-0 p-0 antialiased font-sans text-[#1d1d1f] bg-[#f5f5f7]">
     <div id="root" class="h-full min-h-full flex flex-col items-center"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
