@@ -15,18 +15,41 @@
       "props": "Handheld interview microphone.",
       "personality": "Relaxed, confident, friendly, professional, and natural.",
       "expression": "Natural documentary expressions; subtle smiles and attentive expressions when interacting.",
+      "identity_anchor": {
+        "identity_summary": "Female adult interviewer; exact facial identity, facial structure, natural proportions, brown hair, and natural makeup must remain unchanged.",
+        "face_shape": null,
+        "eye_shape": null,
+        "eyebrow_shape": null,
+        "nose_shape": null,
+        "lip_shape": null,
+        "distinctive_features": [],
+        "reference_priority": "Use the supplied visual reference as the authoritative source for unspecified facial details. Do not invent or redesign facial features."
+      },
+      "reference_rules": {
+        "identity_priority": "Highest",
+        "facial_identity_priority": "Highest",
+        "hairstyle_priority": "Highest",
+        "clothing_priority": "Highest",
+        "accessory_priority": "High",
+        "prop_priority": "High",
+        "cross_scene_consistency": "Mandatory"
+      },
       "consistency_rules": [
         "Preserve the exact same facial identity across all scenes.",
         "Preserve brown hair and hairstyle.",
         "Preserve cream or white textured short-sleeve blouse.",
         "Preserve dark navy trousers.",
         "Preserve wristwatch and handheld microphone.",
-        "Do not change age, facial structure, body proportions, hairstyle, clothing, accessories, or microphone."
+        "Do not change age, facial structure, body proportions, hairstyle, clothing, accessories, or microphone.",
+        "Treat the identity anchor as immutable across every scene.",
+        "When a facial detail is not explicitly defined, follow the visual reference instead of inventing a new feature."
       ],
       "negative_constraints": [
         "identity drift",
         "face swapping",
+        "different facial structure",
         "different hairstyle",
+        "changing hair length",
         "changing clothes",
         "missing microphone",
         "missing wristwatch",
@@ -55,19 +78,42 @@
       "props": [],
       "personality": "Friendly, relaxed, attentive, and conversational.",
       "expression": "Natural attentive expressions and subtle genuine smiles.",
+      "identity_anchor": {
+        "identity_summary": "Young adult female customer; exact facial identity, natural facial proportions, short dark hair, glasses, dark navy long-sleeve top, and black crossbody bag must remain unchanged.",
+        "face_shape": null,
+        "eye_shape": null,
+        "eyebrow_shape": null,
+        "nose_shape": null,
+        "lip_shape": null,
+        "distinctive_features": [],
+        "reference_priority": "Use the supplied visual reference as the authoritative source for unspecified facial details. Do not invent or redesign facial features."
+      },
+      "reference_rules": {
+        "identity_priority": "Highest",
+        "facial_identity_priority": "Highest",
+        "hairstyle_priority": "Highest",
+        "clothing_priority": "Highest",
+        "accessory_priority": "Highest",
+        "prop_priority": "High",
+        "cross_scene_consistency": "Mandatory"
+      },
       "consistency_rules": [
         "Preserve the exact same facial identity in Scenes 02 and 03.",
         "Preserve glasses and short dark hair.",
         "Preserve dark navy long-sleeve top.",
         "Preserve black crossbody bag.",
-        "Do not change age, hairstyle, clothing, accessories, or facial structure."
+        "Do not change age, hairstyle, clothing, accessories, or facial structure.",
+        "Treat the identity anchor as immutable across every scene.",
+        "When a facial detail is not explicitly defined, follow the visual reference instead of inventing a new feature."
       ],
       "negative_constraints": [
         "different face",
         "identity drift",
+        "different facial structure",
         "missing glasses",
         "distorted glasses",
         "different hairstyle",
+        "changing hair length",
         "changing clothes",
         "missing crossbody bag",
         "duplicate customer",
@@ -93,19 +139,43 @@
       "props": [],
       "personality": "Casual, friendly, relaxed, and conversational.",
       "expression": "Natural conversational expressions; genuine smile, laugh, surprise, or response without overacting.",
+      "identity_anchor": {
+        "identity_summary": "Middle-aged male customer; exact facial identity, age, natural proportions, hairstyle visible in the reference, glasses, and bright blue-orange patterned shirt must remain unchanged.",
+        "face_shape": null,
+        "eye_shape": null,
+        "eyebrow_shape": null,
+        "nose_shape": null,
+        "lip_shape": null,
+        "distinctive_features": [],
+        "reference_priority": "Use the supplied visual reference as the authoritative source for unspecified facial and hairstyle details. Do not invent or redesign facial features."
+      },
+      "reference_rules": {
+        "identity_priority": "Highest",
+        "facial_identity_priority": "Highest",
+        "hairstyle_priority": "Highest",
+        "clothing_priority": "Highest",
+        "accessory_priority": "Highest",
+        "prop_priority": "High",
+        "cross_scene_consistency": "Mandatory"
+      },
       "consistency_rules": [
         "Preserve the exact same facial identity in Scenes 04 and 05.",
         "Preserve glasses.",
         "Preserve age and body proportions.",
+        "Preserve the hairstyle visible in the reference.",
         "Preserve the exact bright blue-orange shirt pattern and colors.",
-        "Do not redesign or replace the customer."
+        "Do not redesign or replace the customer.",
+        "Treat the identity anchor as immutable across every scene.",
+        "When a facial or hairstyle detail is not explicitly defined, follow the visual reference instead of inventing a new feature."
       ],
       "negative_constraints": [
         "different customer",
         "identity drift",
+        "different facial structure",
         "missing glasses",
         "altered shirt pattern",
         "different shirt color",
+        "different hairstyle",
         "duplicate customer",
         "overacting",
         "exaggerated surprise",
@@ -131,18 +201,43 @@
       "props": [],
       "personality": "Casual, authentic, relaxed, and conversational.",
       "expression": "Natural response with relaxed facial expression.",
+      "identity_anchor": {
+        "identity_summary": "Adult male customer; exact facial identity, natural facial proportions, visible hairstyle, black baseball cap, and black T-shirt must remain unchanged.",
+        "face_shape": null,
+        "eye_shape": null,
+        "eyebrow_shape": null,
+        "nose_shape": null,
+        "lip_shape": null,
+        "distinctive_features": [],
+        "reference_priority": "Use the supplied visual reference as the authoritative source for unspecified facial and hairstyle details. Do not invent or redesign facial features."
+      },
+      "reference_rules": {
+        "identity_priority": "Highest",
+        "facial_identity_priority": "Highest",
+        "hairstyle_priority": "Highest",
+        "clothing_priority": "Highest",
+        "accessory_priority": "Highest",
+        "prop_priority": "High",
+        "cross_scene_consistency": "Mandatory"
+      },
       "consistency_rules": [
         "Preserve the exact same facial identity in Scene 07.",
         "Preserve black baseball cap.",
         "Preserve black T-shirt.",
         "Preserve age and body proportions.",
-        "Do not replace the customer with another person."
+        "Preserve hairstyle where visible under or around the cap.",
+        "Do not replace the customer with another person.",
+        "Treat the identity anchor as immutable across every scene.",
+        "When a facial or hairstyle detail is not explicitly defined, follow the visual reference instead of inventing a new feature."
       ],
       "negative_constraints": [
         "different customer",
+        "different facial structure",
         "missing baseball cap",
+        "different cap style",
         "different shirt color",
         "identity drift",
+        "different hairstyle",
         "duplicate customer",
         "merged bodies",
         "distorted face",
@@ -156,11 +251,18 @@
   ],
   "global_character_rules": [
     "Character identity must remain stable between scenes.",
+    "Treat every identity_anchor as immutable unless an explicit update to the character definition is made.",
+    "Facial identity has the highest consistency priority.",
     "Do not merge identities between different characters.",
     "Do not introduce a new identifiable main character unless explicitly defined by the scene specification.",
     "Preserve clothing, accessories, hairstyle, facial identity, body proportions, and age within each character's defined scenes.",
     "Use photorealistic human appearance with natural skin texture and realistic anatomy.",
     "Maintain authentic documentary-style expressions and body language.",
-    "Do not use cartoon, anime, illustration, CGI, 3D-rendered, or plastic-looking characters."
-  ]
+    "When a visual detail is not explicitly defined, use the supplied reference as the source of truth rather than inventing a new detail.",
+    "Do not use cartoon, anime, illustration, CGI, 3D-rendered, or plastic-looking characters.",
+    "Do not redesign a character between scenes.",
+    "Do not substitute one defined character for another defined character.",
+    "Cross-scene continuity is mandatory for every character referenced by scene.json."
+  ],
+  "version": "2.0.0"
 }
