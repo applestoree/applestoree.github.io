@@ -3,6 +3,7 @@
     {
       "scene": 1,
       "title": "Scene 01",
+      "character_ids": ["character_01"],
       "subject": "A female interviewer standing naturally inside or near the entrance of an authentic Apple Store Malaysia. She has brown hair, natural makeup, realistic facial features, a cream or white textured short-sleeve blouse, dark navy trousers, a wristwatch, and a handheld microphone.",
       "action": "The interviewer faces the camera while preparing to introduce the interview. Her posture is relaxed and confident, with natural hand positioning and subtle documentary-style body language.",
       "environment": "Authentic Apple Store Malaysia environment inside a shopping mall, visible Apple Store architecture, glass façade, polished floor, shoppers, retail lighting, and realistic mall surroundings.",
@@ -16,6 +17,7 @@
     {
       "scene": 2,
       "title": "Scene 02",
+      "character_ids": ["character_01", "character_02"],
       "subject": "The same female interviewer speaking with a young female customer wearing glasses, with short dark hair, a dark navy long-sleeve top, and a black crossbody bag.",
       "action": "The interviewer holds the microphone toward the female customer while listening attentively. The customer responds naturally with realistic facial expressions and relaxed body language.",
       "environment": "Inside the Apple Store Malaysia retail area, near black retractable queue barriers and product display tables. Shoppers and store details appear naturally in the background.",
@@ -29,6 +31,7 @@
     {
       "scene": 3,
       "title": "Scene 03",
+      "character_ids": ["character_01", "character_02"],
       "subject": "The same female interviewer and the same young female customer with glasses and short dark hair, continuing their authentic conversation inside the Apple Store.",
       "action": "The interviewer leans slightly toward the customer while holding the microphone. The customer reacts naturally with a small smile or attentive expression, showing genuine engagement during the conversation.",
       "environment": "Apple Store Malaysia interior near the queue barriers and product display area, with realistic shoppers, wooden tables, glass surfaces, and bright but soft mall lighting.",
@@ -42,6 +45,7 @@
     {
       "scene": 4,
       "title": "Scene 04",
+      "character_ids": ["character_01", "character_03"],
       "subject": "The same female interviewer interviewing a middle-aged male customer wearing glasses and a bright blue-orange patterned short-sleeve shirt.",
       "action": "The interviewer holds the microphone toward the male customer. The customer stands naturally and responds with relaxed body language while facing the interviewer or slightly toward the camera.",
       "environment": "Authentic Apple Store Malaysia retail environment, surrounded by product tables, queue barriers, shoppers, glass architecture, and realistic indoor mall lighting.",
@@ -55,6 +59,7 @@
     {
       "scene": 5,
       "title": "Scene 05",
+      "character_ids": ["character_01", "character_03"],
       "subject": "The middle-aged male customer wearing glasses and the bright blue-orange patterned shirt, reacting naturally during the interview.",
       "action": "The customer shows a genuine spontaneous reaction, such as smiling, laughing, looking surprised, or responding expressively while interacting with the interviewer. Keep the expression natural and believable.",
       "environment": "Inside the same Apple Store Malaysia location, with queue barriers, product displays, shoppers, polished flooring, and realistic mall activity in the background.",
@@ -68,6 +73,7 @@
     {
       "scene": 6,
       "title": "Scene 06",
+      "character_ids": ["character_01"],
       "subject": "The female interviewer interacting with a customer during a relaxed and friendly interview moment inside the Apple Store Malaysia.",
       "action": "The interviewer and customer share a natural smile or laugh while continuing their conversation. Their body language is open, spontaneous, and comfortable.",
       "environment": "Apple Store Malaysia interior with wooden tables, Apple products, queue barriers, shoppers, glass architecture, and realistic mall lighting.",
@@ -81,6 +87,7 @@
     {
       "scene": 7,
       "title": "Scene 07",
+      "character_ids": ["character_01", "character_04"],
       "subject": "The same female interviewer speaking with a male customer wearing a black baseball cap and a black T-shirt.",
       "action": "The interviewer holds the microphone toward the male customer. The customer responds naturally with relaxed posture and authentic facial expression.",
       "environment": "Authentic Apple Store Malaysia retail environment, with wooden product tables, Apple devices, shoppers, queue barriers, polished flooring, and realistic mall architecture.",
@@ -94,6 +101,7 @@
     {
       "scene": 8,
       "title": "Scene 08 — Closing B-Roll",
+      "character_ids": [],
       "subject": "Authentic Apple Store Malaysia retail environment without introducing new characters as the main focus.",
       "action": "Capture a natural closing B-roll moment showing customers browsing products, staff assisting shoppers, Apple devices displayed on wooden tables, and the movement of people inside the store.",
       "environment": "Apple Store Malaysia interior with wooden display tables, iPhones, Apple Watch products, accessories, staff, customers, glass architecture, polished floors, and realistic shopping mall surroundings.",
