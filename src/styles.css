@@ -9,6 +9,7 @@ body,
 
 html {
   background: #f3f4f6;
+  overflow: hidden;
 }
 
 body {
@@ -24,6 +25,7 @@ body {
   display: flex;
   flex-direction: column;
   background: #fff;
+  overflow: hidden;
 }
 
 * {
