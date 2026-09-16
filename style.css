@@ -23,7 +23,6 @@ body {
 
 main {
   max-width: 500px;
-  min-height: 100%;
   margin: auto;
   padding: 24px;
   flex: 1;
