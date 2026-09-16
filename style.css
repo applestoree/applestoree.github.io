@@ -2,9 +2,23 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   margin: 0;
   font-family: Arial, sans-serif;
+}
+
+#root {
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
@@ -12,4 +26,6 @@ main {
   min-height: 100vh;
   margin: auto;
   padding: 24px;
+  flex: 1;
+  overflow-y: auto;
 }
