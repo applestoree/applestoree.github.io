@@ -1,0 +1,108 @@
+{
+  "scenes": [
+    {
+      "scene": 1,
+      "title": "Scene 01",
+      "subject": "A female interviewer standing naturally inside or near the entrance of an authentic Apple Store Malaysia. She has brown hair, natural makeup, realistic facial features, a cream or white textured short-sleeve blouse, dark navy trousers, a wristwatch, and a handheld microphone.",
+      "action": "The interviewer faces the camera while preparing to introduce the interview. Her posture is relaxed and confident, with natural hand positioning and subtle documentary-style body language.",
+      "environment": "Authentic Apple Store Malaysia environment inside a shopping mall, visible Apple Store architecture, glass façade, polished floor, shoppers, retail lighting, and realistic mall surroundings.",
+      "mood_atmosphere": "Natural, welcoming, authentic, energetic, and documentary-like. The atmosphere feels like a genuine customer interview recorded inside a busy shopping mall.",
+      "global_visual_style": "Authentic documentary-style social media commercial, photorealistic, cinematic handheld smartphone photography, realistic human expressions, natural skin texture, premium but authentic lifestyle, subtle depth of field, realistic indoor lighting, high detail.",
+      "camera_composition": "Vertical 9:16 composition, medium shot, eye-level camera angle, interviewer positioned naturally in the center or slightly off-center, realistic handheld framing, subtle background depth, balanced documentary composition.",
+      "character_consistency_rules": "Preserve the same female interviewer throughout all scenes: brown hair and hairstyle, facial identity, skin tone, body proportions, cream or white textured short-sleeve blouse, dark navy trousers, wristwatch, and handheld microphone. Do not alter her age, hairstyle, clothing, or facial structure.",
+      "style_color_persistence": "Maintain natural indoor mall lighting, neutral Apple Store tones, realistic skin colors, soft whites, light wood, glass reflections, dark navy clothing, and authentic documentary color grading.",
+      "negative_constraints_avoid_exclude": "cartoon, anime, illustration, CGI, 3D render, plastic skin, artificial face, unrealistic anatomy, distorted hands, extra fingers, duplicate people, inconsistent interviewer identity, changing clothes, fantasy lighting, studio background, fake Apple Store, excessive retouching, oversaturated colors, text overlays, subtitles, watermark, promotional graphics."
+    },
+    {
+      "scene": 2,
+      "title": "Scene 02",
+      "subject": "The same female interviewer speaking with a young female customer wearing glasses, with short dark hair, a dark navy long-sleeve top, and a black crossbody bag.",
+      "action": "The interviewer holds the microphone toward the female customer while listening attentively. The customer responds naturally with realistic facial expressions and relaxed body language.",
+      "environment": "Inside the Apple Store Malaysia retail area, near black retractable queue barriers and product display tables. Shoppers and store details appear naturally in the background.",
+      "mood_atmosphere": "Friendly, candid, conversational, relaxed, and authentic. The scene feels spontaneous rather than staged.",
+      "global_visual_style": "Photorealistic documentary photography, cinematic handheld smartphone footage, natural skin texture, realistic expressions, authentic lifestyle commercial, subtle depth of field, natural indoor mall lighting, premium realism.",
+      "camera_composition": "Vertical 9:16 composition, medium two-shot, interviewer and customer both visible, eye-level perspective, natural conversational spacing, customer slightly angled toward interviewer, realistic handheld framing.",
+      "character_consistency_rules": "Keep the interviewer identical to Scene 01. Preserve the female customer's glasses, short dark hair, dark navy long-sleeve top, black crossbody bag, facial identity, body proportions, and age. Do not introduce another customer or change her clothing.",
+      "style_color_persistence": "Maintain the same neutral Apple Store color palette, natural skin tones, soft indoor lighting, dark navy clothing, black accessories, light wood surfaces, and realistic documentary color grading.",
+      "negative_constraints_avoid_exclude": "different faces, inconsistent characters, duplicate customers, changing clothing, missing glasses, distorted glasses, artificial smiles, stiff poses, cartoon style, CGI, plastic skin, unrealistic hands, extra fingers, fake retail environment, excessive blur, dramatic studio lighting, text, subtitles, watermark, promotional poster."
+    },
+    {
+      "scene": 3,
+      "title": "Scene 03",
+      "subject": "The same female interviewer and the same young female customer with glasses and short dark hair, continuing their authentic conversation inside the Apple Store.",
+      "action": "The interviewer leans slightly toward the customer while holding the microphone. The customer reacts naturally with a small smile or attentive expression, showing genuine engagement during the conversation.",
+      "environment": "Apple Store Malaysia interior near the queue barriers and product display area, with realistic shoppers, wooden tables, glass surfaces, and bright but soft mall lighting.",
+      "mood_atmosphere": "Warm, personal, candid, comfortable, and emotionally engaging without exaggeration.",
+      "global_visual_style": "Authentic documentary-style social media commercial, photorealistic human interaction, cinematic handheld smartphone photography, natural expressions, realistic skin texture, subtle depth of field, high-detail lifestyle realism.",
+      "camera_composition": "Vertical 9:16 composition, intimate medium close-up two-shot, eye-level perspective, interviewer and customer occupying the foreground, realistic conversational framing, natural background separation.",
+      "character_consistency_rules": "Preserve the exact identities and clothing from Scene 01 and Scene 02. The interviewer must retain her brown hair, cream textured blouse, dark navy trousers, wristwatch, and microphone. The customer must retain her glasses, short dark hair, navy top, and black crossbody bag.",
+      "style_color_persistence": "Use consistent natural skin tones, neutral whites, soft wood tones, navy clothing, realistic mall reflections, and the same cinematic documentary color treatment as previous scenes.",
+      "negative_constraints_avoid_exclude": "identity drift, face swapping, different hairstyle, different clothes, duplicated characters, exaggerated emotions, forced poses, artificial eye contact, deformed hands, extra fingers, plastic skin, cartoon, anime, CGI, oversaturated colors, fake background, text overlays, subtitles, logos unrelated to the reference."
+    },
+    {
+      "scene": 4,
+      "title": "Scene 04",
+      "subject": "The same female interviewer interviewing a middle-aged male customer wearing glasses and a bright blue-orange patterned short-sleeve shirt.",
+      "action": "The interviewer holds the microphone toward the male customer. The customer stands naturally and responds with relaxed body language while facing the interviewer or slightly toward the camera.",
+      "environment": "Authentic Apple Store Malaysia retail environment, surrounded by product tables, queue barriers, shoppers, glass architecture, and realistic indoor mall lighting.",
+      "mood_atmosphere": "Casual, friendly, authentic, and conversational. The scene captures a genuine customer experience rather than a staged commercial performance.",
+      "global_visual_style": "Photorealistic documentary photography, realistic Malaysian retail environment, cinematic handheld smartphone camera, natural skin texture, authentic facial expressions, subtle depth of field, premium but believable lifestyle visual style.",
+      "camera_composition": "Vertical 9:16 composition, medium shot or medium two-shot, eye-level perspective, interviewer and customer clearly visible, balanced foreground and background, natural handheld framing.",
+      "character_consistency_rules": "Keep the interviewer identical to previous scenes. Preserve the middle-aged male customer's glasses, facial identity, age, body proportions, and bright blue-orange patterned short-sleeve shirt. Do not change the pattern, color, or clothing style.",
+      "style_color_persistence": "Maintain realistic skin tones, soft mall lighting, Apple Store neutral colors, natural wood tones, bright blue-orange shirt colors, and consistent documentary color grading.",
+      "negative_constraints_avoid_exclude": "young or different customer, missing glasses, altered shirt pattern, inconsistent interviewer, duplicate people, distorted faces, unnatural anatomy, artificial smiles, cartoon, anime, CGI, plastic skin, fake Apple Store, excessive HDR, harsh flash, text overlays, subtitles, watermark, promotional graphics."
+    },
+    {
+      "scene": 5,
+      "title": "Scene 05",
+      "subject": "The middle-aged male customer wearing glasses and the bright blue-orange patterned shirt, reacting naturally during the interview.",
+      "action": "The customer shows a genuine spontaneous reaction, such as smiling, laughing, looking surprised, or responding expressively while interacting with the interviewer. Keep the expression natural and believable.",
+      "environment": "Inside the same Apple Store Malaysia location, with queue barriers, product displays, shoppers, polished flooring, and realistic mall activity in the background.",
+      "mood_atmosphere": "Lighthearted, spontaneous, warm, and authentic. The moment feels like an unscripted reaction captured during a real interview.",
+      "global_visual_style": "Authentic documentary photography, cinematic handheld smartphone realism, photorealistic facial expressions, natural skin texture, realistic lighting, subtle motion-inspired composition, premium social media documentary aesthetic.",
+      "camera_composition": "Vertical 9:16 composition, medium close-up or close-up portrait, customer positioned prominently in the foreground, natural eye-level camera angle, interviewer may be partially visible, realistic background depth.",
+      "character_consistency_rules": "Preserve the exact middle-aged male customer from Scene 04: same face, glasses, hairstyle, age, body proportions, and blue-orange patterned shirt. Preserve the interviewer whenever visible. Do not exaggerate or redesign the reaction.",
+      "style_color_persistence": "Maintain the same lighting direction, neutral retail background, natural skin tones, blue-orange clothing colors, realistic contrast, and consistent documentary color grading.",
+      "negative_constraints_avoid_exclude": "overacting, exaggerated surprise, cartoon expression, artificial laughter, distorted mouth, deformed face, inconsistent clothing, missing glasses, duplicate customer, identity change, plastic skin, CGI, studio lighting, fake background, text overlays, subtitles, watermark, advertisement graphics."
+    },
+    {
+      "scene": 6,
+      "title": "Scene 06",
+      "subject": "The female interviewer interacting with a customer during a relaxed and friendly interview moment inside the Apple Store Malaysia.",
+      "action": "The interviewer and customer share a natural smile or laugh while continuing their conversation. Their body language is open, spontaneous, and comfortable.",
+      "environment": "Apple Store Malaysia interior with wooden tables, Apple products, queue barriers, shoppers, glass architecture, and realistic mall lighting.",
+      "mood_atmosphere": "Warm, cheerful, genuine, spontaneous, and human. The scene should communicate authentic connection without looking scripted.",
+      "global_visual_style": "Photorealistic documentary-style social media commercial, cinematic handheld smartphone photography, natural expressions, realistic skin texture, subtle depth of field, authentic lifestyle atmosphere, premium but unpolished realism.",
+      "camera_composition": "Vertical 9:16 composition, medium two-shot, eye-level perspective, natural conversational framing, both subjects visible with relaxed posture, realistic background activity, subtle handheld imperfection.",
+      "character_consistency_rules": "Preserve the same interviewer identity, clothing, hairstyle, microphone, and accessories. Preserve the customer identity and clothing from the corresponding reference scene. Do not merge customer identities or introduce additional participants.",
+      "style_color_persistence": "Keep consistent Apple Store lighting, neutral white and light wood palette, realistic skin tones, natural clothing colors, soft shadows, and cinematic documentary color treatment.",
+      "negative_constraints_avoid_exclude": "forced laughter, exaggerated expressions, posed advertisement smiles, identity drift, duplicate characters, inconsistent clothing, unrealistic hands, extra fingers, cartoon, CGI, plastic skin, artificial lighting, fake background, excessive saturation, text overlays, subtitles, watermark, promotional design."
+    },
+    {
+      "scene": 7,
+      "title": "Scene 07",
+      "subject": "The same female interviewer speaking with a male customer wearing a black baseball cap and a black T-shirt.",
+      "action": "The interviewer holds the microphone toward the male customer. The customer responds naturally with relaxed posture and authentic facial expression.",
+      "environment": "Authentic Apple Store Malaysia retail environment, with wooden product tables, Apple devices, shoppers, queue barriers, polished flooring, and realistic mall architecture.",
+      "mood_atmosphere": "Casual, authentic, relaxed, and documentary-like. The scene feels like a genuine spontaneous customer interview.",
+      "global_visual_style": "Photorealistic cinematic documentary photography, handheld smartphone realism, natural indoor lighting, realistic human proportions, natural skin texture, subtle depth of field, premium authentic social media aesthetic.",
+      "camera_composition": "Vertical 9:16 composition, medium two-shot or medium close-up, eye-level camera angle, interviewer and customer clearly visible, natural spacing, realistic handheld framing.",
+      "character_consistency_rules": "Preserve the interviewer exactly as in previous scenes. Preserve the male customer's black baseball cap, black T-shirt, facial identity, age, hairstyle where visible, and body proportions. Do not replace the customer with another person.",
+      "style_color_persistence": "Maintain consistent neutral Apple Store colors, realistic indoor lighting, black clothing, natural skin tones, soft reflections, and documentary color grading.",
+      "negative_constraints_avoid_exclude": "different customer, missing baseball cap, different shirt color, inconsistent interviewer, duplicate people, merged bodies, distorted face, deformed hands, cartoon, anime, CGI, plastic skin, excessive retouching, unrealistic lighting, fake store, text, subtitles, watermark, promotional graphics."
+    },
+    {
+      "scene": 8,
+      "title": "Scene 08 — Closing B-Roll",
+      "subject": "Authentic Apple Store Malaysia retail environment without introducing new characters as the main focus.",
+      "action": "Capture a natural closing B-roll moment showing customers browsing products, staff assisting shoppers, Apple devices displayed on wooden tables, and the movement of people inside the store.",
+      "environment": "Apple Store Malaysia interior with wooden display tables, iPhones, Apple Watch products, accessories, staff, customers, glass architecture, polished floors, and realistic shopping mall surroundings.",
+      "mood_atmosphere": "Premium, calm, modern, authentic, and documentary-like. The closing scene should feel like a natural conclusion to a real customer interview video.",
+      "global_visual_style": "Authentic Apple Store lifestyle documentary, photorealistic retail photography, cinematic handheld smartphone aesthetic, realistic indoor lighting, natural reflections, subtle depth of field, premium minimalist atmosphere, high detail.",
+      "camera_composition": "Vertical 9:16 composition, wide or medium-wide establishing shot, eye-level perspective, layered retail composition, wooden tables and products visible in the foreground, store environment extending into the background, natural handheld realism.",
+      "character_consistency_rules": "Any visible interviewer or customers must remain consistent with the reference video. Do not create new identifiable characters as the main subjects. Preserve realistic staff and shopper appearance without duplicating people.",
+      "style_color_persistence": "Maintain Apple Store neutral whites, light wood tones, glass reflections, natural skin colors, soft indoor mall lighting, realistic contrast, and consistent documentary color grading.",
+      "negative_constraints_avoid_exclude": "generic electronics store, incorrect Apple products, distorted Apple logo, fake architecture, empty showroom, excessive crowd duplication, floating products, warped tables, unrealistic reflections, CGI, cartoon, plastic surfaces, oversaturated colors, dramatic studio lighting, text overlays, subtitles, watermark, advertisement graphics."
+    }
+  ]
+}
