@@ -1,3 +1,4 @@
+import { SlidersHorizontal } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { getProducts, type Product } from '../services/products'
 import { Badge } from '../components/ui/badge'
@@ -50,6 +51,7 @@ function ProductPage() {
           <p className="text-xs font-medium text-muted-foreground">Filter by type</p>
           <Select value={productType} onValueChange={setProductType}>
             <SelectTrigger aria-label="Filter products by type" className="h-11 rounded-xl bg-secondary/70 shadow-none">
+              <SlidersHorizontal aria-hidden="true" className="size-4 shrink-0 text-muted-foreground" />
               <span>{productType === 'all' ? 'All products' : productType}</span>
             </SelectTrigger>
             <SelectContent>
