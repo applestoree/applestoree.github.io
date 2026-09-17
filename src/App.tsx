@@ -6,9 +6,11 @@ import BottomNav from './components/BottomNav'
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Content />
-      <BottomNav />
+      <div className="flex h-full flex-col overflow-hidden">
+        <Header />
+        <Content />
+        <BottomNav />
+      </div>
     </BrowserRouter>
   )
 }
