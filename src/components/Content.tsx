@@ -5,7 +5,7 @@ import ProfilePage from '../pages/ProfilePage'
 
 function Content() {
   return (
-    <main>
+    <main className="min-h-0 flex-1 overflow-y-auto">
       <Routes>
         <Route path="/home" element={<HomePage />} />
         <Route path="/product" element={<ProductPage />} />
