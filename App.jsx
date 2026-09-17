@@ -1,7 +1,19 @@
+function CartButton() {
+  return (
+    <button type="button" aria-label="Cart">
+      Cart
+    </button>
+  );
+}
+
 function Header() {
   return (
     <header>
-      <h1>Apple Store Malaysia</h1>
+      <div>
+        <h1>Apple Store Malaysia</h1>
+        <p>Apple The Exchange TRX</p>
+      </div>
+      <CartButton />
     </header>
   );
 }
