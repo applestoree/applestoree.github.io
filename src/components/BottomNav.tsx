@@ -1,9 +1,10 @@
+import { House, ShoppingBag, UserRound } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 
 const items = [
-  { to: '/home', label: 'Home', icon: '⌂' },
-  { to: '/product', label: 'Products', icon: '▦' },
-  { to: '/profile', label: 'Profile', icon: '○' },
+  { to: '/home', label: 'Home', icon: House },
+  { to: '/product', label: 'Products', icon: ShoppingBag },
+  { to: '/profile', label: 'Profile', icon: UserRound },
 ]
 
 function BottomNav() {
@@ -14,14 +15,19 @@ function BottomNav() {
           <NavLink
             key={item.to}
             to={item.to}
-            className={({ isActive }) => `flex min-h-14 flex-col items-center justify-center gap-0.5 rounded-xl text-[11px] font-medium transition-colors ${isActive ? 'bg-secondary text-foreground' : 'text-muted-foreground hover:bg-secondary/70 hover:text-foreground'}`}
+            className={({ isActive }) => `flex min-h-14 flex-col items-center justify-center gap-1 rounded-xl text-[11px] font-medium transition-colors ${isActive ? 'bg-secondary text-foreground' : 'text-muted-foreground hover:bg-secondary/70 hover:text-foreground'}`}
           >
-            {({ isActive }) => (
-              <>
-                <span aria-hidden="true" className={`text-lg leading-none ${isActive ? 'font-semibold' : ''}`}>{item.icon}</span>
-                <span>{item.label}</span>
-              </>
-            )}
+            {({ isActive }) => {
+              const Icon = item.icon
+              return (
+                <Icon
+                  aria-hidden="true"
+                  className="size-5"
+                  strokeWidth={isActive ? 2.25 : 2}
+                />
+              )
+            }}
+            <span>{item.label}</span>
           </NavLink>
         ))}
       </div>
