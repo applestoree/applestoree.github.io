@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#075e54">
+  <meta name="description" content="WhatsApp mobile web interface">
+  <title>WhatsApp</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #e5ddd5;
+    }
+    button, input, textarea { font: inherit; }
+    button { border: 0; cursor: pointer; }
+
+    .app {
+      width: 100%;
+      height: 100dvh;
+      overflow: hidden;
+      background: #e5ddd5;
+    }
+    .mobile-screen {
+      width: 100%;
+      max-width: 500px;
+      height: 100dvh;
+      margin: 0 auto;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+    }
+
+    .top-header {
+      height: 64px;
+      flex-shrink: 0;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #075e54;
+      color: white;
+    }
+    .brand { font-size: 21px; font-weight: 700; }
+    .connection {
+      margin-top: 2px;
+      font-size: 10px;
+      opacity: .8;
+    }
+    .icon-button, .header-action {
+      background: transparent;
+      color: white;
+      font-size: 24px;
+      padding: 6px;
+    }
+
+    .search-container {
+      padding: 8px 12px;
+      background: #075e54;
+    }
+    .search-box {
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 12px;
+      background: white;
+      color: #667781;
+    }
+    .search-box span { font-size: 22px; }
+    .search-box input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      font-size: 14px;
+    }
+
+    .chat-list {
+      flex: 1;
+      overflow-y: auto;
+      background: white;
+    }
+    .chat-item {
+      width: 100%;
+      min-height: 74px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+      background: white;
+      border-bottom: 1px solid #f0f2f5;
+    }
+    .chat-item:active { background: #f0f2f5; }
+
+    .avatar {
+      width: 50px;
+      height: 50px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #dfe5e7;
+      color: #54656f;
+      font-size: 19px;
+      font-weight: 600;
+    }
+    .avatar.small {
+      width: 42px;
+      height: 42px;
+      font-size: 16px;
+    }
+    .chat-content { flex: 1; min-width: 0; }
+    .chat-line {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .chat-name {
+      min-width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      color: #111b21;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .chat-time {
+      flex-shrink: 0;
+      color: #667781;
+      font-size: 11px;
+    }
+    .last-message {
+      margin-top: 5px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      color: #667781;
+      font-size: 13px;
+    }
+
+    .conversation-screen { background: #efeae2; }
+    .conversation-header {
+      height: 64px;
+      flex-shrink: 0;
+      padding: 8px 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #075e54;
+      color: white;
+    }
+    .back-button {
+      width: 32px;
+      height: 42px;
+      background: transparent;
+      color: white;
+      font-size: 34px;
+      line-height: 1;
+    }
+    .header-info { flex: 1; min-width: 0; }
+    .header-name {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .header-status {
+      margin-top: 2px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 11px;
+      opacity: .8;
+    }
+
+    .messages {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      padding: 14px 10px;
+      background-color: #efeae2;
+      background-image: radial-gradient(rgba(0,0,0,.035) 1px, transparent 1px);
+      background-size: 12px 12px;
+    }
+    .date-divider {
+      width: fit-content;
+      margin: 8px auto 12px;
+      padding: 5px 9px;
+      border-radius: 6px;
+      background: white;
+      color: #667781;
+      font-size: 10px;
+      box-shadow: 0 1px 1px rgba(0,0,0,.08);
+    }
+    .message-row {
+      width: 100%;
+      display: flex;
+      margin-bottom: 4px;
+    }
+    .message-row.user { justify-content: flex-start; }
+    .message-row.admin { justify-content: flex-end; }
+    .bubble {
+      max-width: 82%;
+      padding: 7px 9px 5px;
+      border-radius: 8px;
+      box-shadow: 0 1px 1px rgba(0,0,0,.10);
+    }
+    .bubble.user {
+      background: white;
+      border-top-left-radius: 2px;
+    }
+    .bubble.admin {
+      background: #d9fdd3;
+      border-top-right-radius: 2px;
+    }
+    .message {
+      color: #111b21;
+      font-size: 14px;
+      line-height: 1.4;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .message-meta {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 3px;
+      margin-top: 2px;
+      color: #667781;
+      font-size: 9px;
+    }
+    .checks { color: #53bdeb; font-size: 11px; }
+
+    .input-bar {
+      min-height: 58px;
+      flex-shrink: 0;
+      padding: 8px;
+      display: flex;
+      align-items: flex-end;
+      gap: 6px;
+      background: #f0f2f5;
+    }
+    .input-bar textarea {
+      flex: 1;
+      min-width: 0;
+      min-height: 42px;
+      max-height: 110px;
+      resize: none;
+      border: 0;
+      outline: 0;
+      border-radius: 21px;
+      padding: 11px 15px;
+      background: white;
+      color: #111b21;
+      line-height: 20px;
+    }
+    .send-button {
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #128c7e;
+      color: white;
+      font-size: 17px;
+    }
+    .send-button:disabled { opacity: .45; cursor: default; }
+
+    .error {
+      flex-shrink: 0;
+      padding: 8px 12px;
+      background: #fff1f0;
+      color: #b42318;
+      border-bottom: 1px solid #ffd5d2;
+      font-size: 12px;
+    }
+    .success {
+      flex-shrink: 0;
+      padding: 7px 12px;
+      background: #e8f7ee;
+      color: #087443;
+      border-bottom: 1px solid #b7e4c7;
+      font-size: 12px;
+    }
+    .empty {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #667781;
+      padding: 30px;
+    }
+    .empty-icon { margin-bottom: 10px; font-size: 40px; }
+
+    @media (min-width: 501px) {
+      .app { display: flex; justify-content: center; }
+      .mobile-screen { box-shadow: 0 0 30px rgba(0,0,0,.15); }
+    }
+  </style>
+</head>
+<body>
+  <div id="app" class="app"></div>
+
+  <script type="module">
+    import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+
+    // =====================================================
+    // SUPABASE
+    // =====================================================
+
+    const SUPABASE_URL = "https://oszqantvugvbvydlizix.supabase.co";
+    const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_CFjQHGQCTu-XwzQKS2YoCw_lrUkhhBK";
+
+    const supabase = createClient(
+      SUPABASE_URL,
+      SUPABASE_PUBLISHABLE_KEY
+    );
+
+    // =====================================================
+    // BOTSAILOR
+    // =====================================================
+
+    const BOTSAILOR_API_TOKEN = "23554|jPN2BOmfK2izqxzHMuZ6GAdMeFFju4TWCedCrm5fad0ac045";
+    const BOTSAILOR_PHONE_NUMBER_ID = "1349098464948574";
+    const BOTSAILOR_SEND_URL = "https://botsailor.com/api/v1/whatsapp/send";
+
+    // =====================================================
+    // STATE
+    // =====================================================
+
+    let messages = [];
+    let selectedChatId = null;
+    let search = "";
+    let input = "";
+    let loading = true;
+    let sending = false;
+    let error = null;
+    let sendStatus = null;
+    let realtimeStatus = "CONNECTING";
+    let channel = null;
+
+    const app = document.getElementById("app");
+
+    // =====================================================
+    // HELPERS
+    // =====================================================
+
+    function getRole(message) {
+      return message?.agent_name?.trim() ? "admin" : "user";
+    }
+
+    function getMessageText(message) {
+      const value = message?.user_message;
+
+      if (value === null || value === undefined) return "";
+
+      if (typeof value === "string") return value;
+
+      if (typeof value === "object") {
+        if (typeof value.text === "string") return value.text;
+        if (typeof value.message === "string") return value.message;
+        if (typeof value.body === "string") return value.body;
+        if (typeof value.content === "string") return value.content;
+
+        try {
+          return JSON.stringify(value);
+        } catch {
+          return "";
+        }
+      }
+
+      return String(value);
+    }
+
+    function getChatName(message) {
+      return message?.first_name || message?.chat_id || "Unknown";
+    }
+
+    function getInitial(name) {
+      return name?.trim()?.charAt(0)?.toUpperCase() || "?";
+    }
+
+    function formatTime(value) {
+      if (!value) return "";
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return "";
+
+      return date.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit"
+      });
+    }
+
+    function formatDate(value) {
+      if (!value) return "";
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return "";
+
+      return date.toLocaleDateString([], {
+        day: "2-digit",
+        month: "short",
+        year: "numeric"
+      });
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function getChats() {
+      const grouped = new Map();
+
+      messages.forEach((message) => {
+        if (!message.chat_id) return;
+
+        if (!grouped.has(message.chat_id)) {
+          grouped.set(message.chat_id, {
+            chatId: message.chat_id,
+            name: getChatName(message),
+            firstName: message.first_name || null,
+            messages: [],
+            lastMessage: message
+          });
+        }
+
+        const chat = grouped.get(message.chat_id);
+        chat.messages.push(message);
+
+        if (!chat.firstName && message.first_name) {
+          chat.firstName = message.first_name;
+          chat.name = message.first_name;
+        }
+
+        if (
+          new Date(message.created_at || 0) >
+          new Date(chat.lastMessage?.created_at || 0)
+        ) {
+          chat.lastMessage = message;
+        }
+      });
+
+      return Array.from(grouped.values()).sort(
+        (a, b) =>
+          new Date(b.lastMessage?.created_at || 0) -
+          new Date(a.lastMessage?.created_at || 0)
+      );
+    }
+
+    function getFilteredChats() {
+      const query = search.trim().toLowerCase();
+      const chats = getChats();
+
+      if (!query) return chats;
+
+      return chats.filter((chat) =>
+        chat.name?.toLowerCase().includes(query) ||
+        chat.chatId?.toLowerCase().includes(query)
+      );
+    }
+
+    function getSelectedChat() {
+      return getChats().find(
+        (chat) => chat.chatId === selectedChatId
+      );
+    }
+
+    function getConversation() {
+      const selectedChat = getSelectedChat();
+      if (!selectedChat) return [];
+
+      return [...selectedChat.messages].sort(
+        (a, b) =>
+          new Date(a.created_at || 0) -
+          new Date(b.created_at || 0)
+      );
+    }
+
+    function scrollMessages() {
+      const messagesEl = document.querySelector(".messages");
+      if (!messagesEl) return;
+
+      requestAnimationFrame(() => {
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+      });
+    }
+
+    // =====================================================
+    // RENDER
+    // =====================================================
+
+    function render() {
+      if (!selectedChatId) {
+        renderChatList();
+      } else {
+        renderConversation();
+      }
+    }
+
+    function renderChatList() {
+      const filteredChats = getFilteredChats();
+
+      app.innerHTML = `
+        <div class="mobile-screen">
+          <header class="top-header">
+            <div>
+              <div class="brand">WhatsApp</div>
+              <div class="connection">● ${escapeHtml(realtimeStatus)}</div>
+            </div>
+            <button class="icon-button" aria-label="More">⋮</button>
+          </header>
+
+          <div class="search-container">
+            <div class="search-box">
+              <span>⌕</span>
+              <input
+                id="searchInput"
+                value="${escapeHtml(search)}"
+                placeholder="Search"
+                autocomplete="off"
+              />
+            </div>
+          </div>
+
+          ${error ? `<div class="error">${escapeHtml(error)}</div>` : ""}
+
+          <div class="chat-list">
+            ${loading
+              ? `<div class="empty">Loading...</div>`
+              : filteredChats.length === 0
+                ? `
+                  <div class="empty">
+                    <div>
+                      <div class="empty-icon">💬</div>
+                      <div>No chats</div>
+                    </div>
+                  </div>
+                `
+                : filteredChats.map((chat) => `
+                  <button
+                    class="chat-item"
+                    data-chat-id="${escapeHtml(chat.chatId)}"
+                  >
+                    <div class="avatar">
+                      ${escapeHtml(getInitial(chat.name))}
+                    </div>
+
+                    <div class="chat-content">
+                      <div class="chat-line">
+                        <div class="chat-name">
+                          ${escapeHtml(chat.name)}
+                        </div>
+                        <div class="chat-time">
+                          ${escapeHtml(formatTime(chat.lastMessage?.created_at))}
+                        </div>
+                      </div>
+
+                      <div class="chat-line">
+                        <div class="last-message">
+                          ${escapeHtml(getMessageText(chat.lastMessage))}
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                `).join("")
+            }
+          </div>
+        </div>
+      `;
+
+      const searchInput = document.getElementById("searchInput");
+
+      searchInput?.addEventListener("input", (event) => {
+        search = event.target.value;
+        renderChatList();
+
+        const nextInput = document.getElementById("searchInput");
+        if (nextInput) {
+          nextInput.focus();
+          nextInput.setSelectionRange(search.length, search.length);
+        }
+      });
+
+      document.querySelectorAll("[data-chat-id]").forEach((button) => {
+        button.addEventListener("click", () => {
+          selectedChatId = button.dataset.chatId;
+          error = null;
+          sendStatus = null;
+          render();
+          scrollMessages();
+        });
+      });
+    }
+
+    function renderConversation() {
+      const selectedChat = getSelectedChat();
+      const conversation = getConversation();
+
+      if (!selectedChat) {
+        selectedChatId = null;
+        renderChatList();
+        return;
+      }
+
+      let previousDate = "";
+
+      const messageHtml = conversation.map((message) => {
+        const role = getRole(message);
+        const currentDate = formatDate(message.created_at);
+        const showDate = currentDate !== previousDate;
+        previousDate = currentDate;
+
+        return `
+          ${showDate ? `
+            <div class="date-divider">
+              ${escapeHtml(currentDate)}
+            </div>
+          ` : ""}
+
+          <div class="message-row ${role}">
+            <div class="bubble ${role}">
+              <div class="message">
+                ${escapeHtml(getMessageText(message))}
+              </div>
+
+              <div class="message-meta">
+                ${escapeHtml(formatTime(message.created_at))}
+                ${role === "admin" ? '<span class="checks">✓✓</span>' : ""}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      app.innerHTML = `
+        <div class="mobile-screen conversation-screen">
+          <header class="conversation-header">
+            <button id="backButton" class="back-button" aria-label="Back">‹</button>
+
+            <div class="avatar small">
+              ${escapeHtml(getInitial(selectedChat.name))}
+            </div>
+
+            <div class="header-info">
+              <div class="header-name">
+                ${escapeHtml(selectedChat.name || "Unknown")}
+              </div>
+              <div class="header-status">
+                ${escapeHtml(selectedChatId)}
+              </div>
+            </div>
+
+            <button class="header-action" aria-label="More">⋮</button>
+          </header>
+
+          ${error ? `<div class="error">${escapeHtml(error)}</div>` : ""}
+          ${sendStatus ? `<div class="success">${escapeHtml(sendStatus)}</div>` : ""}
+
+          <main class="messages">
+            ${messageHtml}
+          </main>
+
+          <div class="input-bar">
+            <textarea
+              id="messageInput"
+              rows="1"
+              placeholder="Message"
+              ${sending ? "disabled" : ""}
+            >${escapeHtml(input)}</textarea>
+
+            <button
+              id="sendButton"
+              class="send-button"
+              ${sending || !input.trim() ? "disabled" : ""}
+              aria-label="Send"
+            >
+              ${sending ? "…" : "➤"}
+            </button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById("backButton")?.addEventListener("click", () => {
+        selectedChatId = null;
+        sendStatus = null;
+        error = null;
+        render();
+      });
+
+      const messageInput = document.getElementById("messageInput");
+      const sendButton = document.getElementById("sendButton");
+
+      messageInput?.addEventListener("input", (event) => {
+        input = event.target.value;
+        sendButton.disabled = sending || !input.trim();
+      });
+
+      messageInput?.addEventListener("keydown", handleKeyDown);
+      sendButton?.addEventListener("click", sendMessage);
+
+      scrollMessages();
+    }
+
+    // =====================================================
+    // INITIAL FETCH
+    // =====================================================
+
+    async function loadMessages() {
+      loading = true;
+      error = null;
+      render();
+
+      const { data, error: fetchError } = await supabase
+        .from("trx_wa")
+        .select("*")
+        .order("created_at", { ascending: true });
+
+      if (fetchError) {
+        console.error("trx_wa error:", fetchError);
+        error = fetchError.message;
+      } else {
+        messages = data || [];
+
+        if (messages.length && !selectedChatId) {
+          const firstChat = messages.find((item) => item.chat_id);
+          if (firstChat) selectedChatId = firstChat.chat_id;
+        }
+      }
+
+      loading = false;
+      render();
+
+      if (selectedChatId) scrollMessages();
+    }
+
+    // =====================================================
+    // SUPABASE REALTIME
+    // =====================================================
+
+    function subscribeRealtime() {
+      channel = supabase
+        .channel("trx_wa_mobile_realtime")
+        .on(
+          "postgres_changes",
+          {
+            event: "INSERT",
+            schema: "public",
+            table: "trx_wa"
+          },
+          (payload) => {
+            console.log("trx_wa INSERT:", payload);
+
+            const exists = messages.some(
+              (item) => item.wa_message_id === payload.new.wa_message_id
+            );
+
+            if (!exists) {
+              messages = [...messages, payload.new];
+              render();
+              if (selectedChatId === payload.new.chat_id) scrollMessages();
+            }
+          }
+        )
+        .on(
+          "postgres_changes",
+          {
+            event: "UPDATE",
+            schema: "public",
+            table: "trx_wa"
+          },
+          (payload) => {
+            console.log("trx_wa UPDATE:", payload);
+
+            messages = messages.map((item) =>
+              item.wa_message_id === payload.new.wa_message_id
+                ? payload.new
+                : item
+            );
+
+            render();
+          }
+        )
+        .on(
+          "postgres_changes",
+          {
+            event: "DELETE",
+            schema: "public",
+            table: "trx_wa"
+          },
+          (payload) => {
+            console.log("trx_wa DELETE:", payload);
+
+            messages = messages.filter(
+              (item) => item.wa_message_id !== payload.old.wa_message_id
+            );
+
+            render();
+          }
+        )
+        .subscribe((status) => {
+          console.log("Realtime status:", status);
+          realtimeStatus = status;
+          render();
+        });
+    }
+
+    // =====================================================
+    // SEND WHATSAPP MESSAGE
+    // =====================================================
+
+    async function sendMessage() {
+      const text = input.trim();
+
+      if (!text || !selectedChatId || sending) return;
+
+      const phoneNumber = String(selectedChatId).replace(/\D/g, "");
+
+      if (!phoneNumber) {
+        error = "Nomor WhatsApp customer tidak valid.";
+        render();
+        return;
+      }
+
+      sending = true;
+      error = null;
+      sendStatus = null;
+      render();
+
+      try {
+        const body = new URLSearchParams();
+
+        body.append("apiToken", BOTSAILOR_API_TOKEN);
+        body.append("phone_number_id", BOTSAILOR_PHONE_NUMBER_ID);
+        body.append("message", text);
+        body.append("phone_number", phoneNumber);
+
+        const response = await fetch(BOTSAILOR_SEND_URL, {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          body
+        });
+
+        let result = null;
+
+        try {
+          result = await response.json();
+        } catch {
+          result = null;
+        }
+
+        console.log("BotSailor response:", result);
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        if (String(result?.status) !== "1") {
+          throw new Error(
+            result?.message || "BotSailor gagal mengirim pesan."
+          );
+        }
+
+        // Do not insert into trx_wa.
+        // BotSailor webhook handles outgoing messages.
+
+        input = "";
+        sendStatus = "Message sent";
+      } catch (err) {
+        console.error("BotSailor send error:", err);
+        error = err?.message || "Gagal mengirim pesan WhatsApp.";
+      } finally {
+        sending = false;
+        render();
+
+        if (sendStatus) {
+          window.setTimeout(() => {
+            sendStatus = null;
+            render();
+          }, 2500);
+        }
+      }
+    }
+
+    // =====================================================
+    // ENTER TO SEND
+    // =====================================================
+
+    function handleKeyDown(event) {
+      if (event.key === "Enter" && !event.shiftKey) {
+        event.preventDefault();
+        sendMessage();
+      }
+    }
+
+    // =====================================================
+    // START
+    // =====================================================
+
+    render();
+    loadMessages();
+    subscribeRealtime();
+  </script>
+</body>
+</html>
